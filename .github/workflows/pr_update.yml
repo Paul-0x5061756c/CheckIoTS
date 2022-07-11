@@ -2,7 +2,7 @@ name: Update Pr with Jira
 on:
   pull_request:
     types: [opened]
-
+  
 jobs:
   update_pr:
     runs-on: ubuntu-latest
