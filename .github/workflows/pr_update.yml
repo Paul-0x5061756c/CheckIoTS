@@ -1,11 +1,10 @@
-name: PR update
+name: Update Pr with Jira ticket
 on:
   pull_request:
     types: [opened]
 
 jobs:
   update_pr:
-    name: PR update
     runs-on: ubuntu-latest
     steps:
       - name: Check Branch
@@ -20,7 +19,7 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           base-branch-regex: '[A-Za-z\d-_.\\/]+'
           head-branch-regex: '^([A-Za-z])+-\d+'
-          title-template: '[%headbranch%] '
+          title-template: '[[%headbranch%]](https://levarne.atlassian.net/browse/[%headbranch%]) '
           body-template: |
             Jira issue: %headbranch%
             ---
