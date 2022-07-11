@@ -4,7 +4,7 @@ var nearestValue = (values: number[], search: number) =>
 	values.sort((a, b) => {
 		return Math.abs(search - a) - Math.abs(search - b);
 	})[0];
-
+    
 console.log("Example:");
 console.log(nearestValue([4, 7, 10, 11, 12, 17], 9));
 
