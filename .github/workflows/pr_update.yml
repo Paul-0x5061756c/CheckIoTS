@@ -1,4 +1,4 @@
-name: Update Pr with Jira ticket
+name: Update Pr with Jira
 on:
   pull_request:
     types: [opened]
@@ -19,9 +19,9 @@ jobs:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           base-branch-regex: '[A-Za-z\d-_.\\/]+'
           head-branch-regex: '^([A-Za-z])+-\d+'
-          title-template: '[[%headbranch%]](https://levarne.atlassian.net/browse/[%headbranch%]) '
+          title-template: '%headbranch%'
           body-template: |
-            Jira issue: %headbranch%
+            Jira issue: [%headbranch%](https://levarne.atlassian.net/browse/%headbranch%)
             ---
           body-update-action: 'prefix'
           body-uppercase-base-match: false
